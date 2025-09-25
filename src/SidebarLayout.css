@@ -1,0 +1,214 @@
+/* SidebarLayout.css */
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-image: url(./images/slide1/bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sidebar {
+  width: 300px;
+  background-image: url(./images/slide1/sliderback.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 15px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: 95vh;
+  overflow-y: auto;
+  position: relative;
+  transition: transform 0.4s ease, opacity 0.4s ease, width 0.4s ease,
+    margin 0.4s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.active-tab-title {
+  font-weight: 800;
+}
+
+.toggle-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.toggle-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}
+
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.sidebar .nav-link {
+  color: white;
+  font-weight: 400 !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar .nav-link:hover {
+  margin-left: 5px;
+}
+
+.nav-link.active {
+  background: transparent;
+  color: #01db60 !important;
+  font-weight: 900 !important;
+  font-size: 1.2rem;
+}
+.active-tab-title {
+  color: #01db60;
+}
+.sidebar.collapsed {
+  transform: translateX(-120%);
+  opacity: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+.collapsed-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #00246a;
+  border-radius: 12px;
+  padding: 10px 20px !important;
+  z-index: 10;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  animation: slideInFromLeft 0.4s ease forwards;
+  width: 15%;
+}
+.collapsed-header .toggle-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.content-area {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.content-area.collapsed {
+  height: 100vh;
+}
+
+.main-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slide-wrapper img {
+  width: 55vw;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Ensure proper layout */
+.d-flex {
+  display: flex !important;
+}
+
+.vh-100 {
+  height: 100vh !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.text-start {
+  text-align: left !important;
+}
+
+.p-3 {
+  padding: 1rem !important;
+}
+
+/* Bootstrap-like utility classes */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-item {
+  margin-bottom: 5px;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.nav.flex-column {
+  flex-direction: column;
+}
